@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="pitch-header">
+  {% if page.logo %}
+    <div class="logo-wrap"><img class="logo" src="{{ page.logo | relative_url }}" alt=""></div>
+  {% endif %}
+  <div>
+    <h1 class="pitch-title">{{ page.title }}</h1>
+    {% if page.date %}<div class="pitch-date">{{ page.date | date: "%B %d, %Y" }}</div>{% endif %}
+  </div>
+</div>
+
+{% if page.pdf %}
+  <!-- Uses the browser's built-in PDF viewer -->
+  <iframe class="viewer" src="{{ page.pdf | relative_url }}" loading="lazy"></iframe>
+  <p class="fallback">If the PDF doesn't load, <a href="{{ page.pdf | relative_url }}">download it directly</a>.</p>
+{% else %}
+  <p>No PDF attached.</p>
+{% endif %}
+
+{{ content }}

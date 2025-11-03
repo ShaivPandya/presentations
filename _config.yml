@@ -1,0 +1,20 @@
+title: Stock Pitches
+description: Public portfolio of investment presentations
+url: ""        # set to "https://<user>.github.io/<repo>" if using a project site
+baseurl: ""    # set to "/<repo>" for a project site
+
+markdown: kramdown
+theme: null
+plugins: []
+
+collections:
+  pitches:
+    output: true
+    permalink: /pitches/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "pitches"
+    values:
+      layout: pitch

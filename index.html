@@ -1,0 +1,22 @@
+---
+layout: default
+title: Presentations
+---
+
+<h1>Presentations</h1>
+
+<div class="list">
+  {% assign items = site.pitches | sort: "date" | reverse %}
+  {% for item in items %}
+    <a class="card" href="{{ item.pdf | relative_url }}">
+      <div class="logo-wrap">
+        {% if item.logo %}<img class="logo" src="{{ item.logo | relative_url }}" alt="">{% endif %}
+      </div>
+      <div class="meta">
+        <div class="kicker">Presentation</div>
+        <div class="title">{{ item.title }}</div>
+        {% if item.date %}<div class="date">{{ item.date | date: "%B %d, %Y" }}</div>{% endif %}
+      </div>
+    </a>
+  {% endfor %}
+</div>
